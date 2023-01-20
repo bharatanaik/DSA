@@ -15,11 +15,13 @@
 int insert_elem(int array[], int n, int elem, int pos)
 {
 	int i;
+	pos--;
 	if(pos>n)
-		n = pos;
-	for(i = n; i>pos; i--)
-		array[i] = array[i-1]; 
+		pos=n;
+	for(i = n; i>=pos; i--)
+		array[i+1] = array[i]; 
 	array[pos] = elem;
+	n++;
 	return n;
 }
 
@@ -29,10 +31,12 @@ int insert_elem(int array[], int n, int elem, int pos)
 int delete_elem(int array[], int n, int pos)
 {
 	int i, ptr;
+	pos--;
 	if(pos>n)
 		return n;
-	for(i=pos; i<n; i++)
+	for(i=pos; i<n-1; i++)
 		array[i] = array[i+1];
+	n--;
 	return n;
 }
 
@@ -90,4 +94,3 @@ int main()
 	}
 	return 0;
 }
-
