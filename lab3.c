@@ -35,11 +35,11 @@ void pop(){
 }
 
 void demo_over_under_flow(){
-	int i, elem;
+	int i;
 	printf("\n\n#### OVER FLOW CONDITION ####\n\n");
 	printf("Currently stack contains %d elements and max size of stack is %d.\n So, Enter %d more elements to see STACK OVERFLOW error: ",top+1, MAX,MAX-top); 
 	for(i = top;i<MAX; i++){
-		push(elem);
+		push();
 	}
 	
 	printf("\n\n#### UNDER FLOW CONDITION ####\n\n");
