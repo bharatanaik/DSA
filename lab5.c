@@ -42,17 +42,24 @@ void display_sll(NODE first){
 
 void linear_search(NODE first){
     NODE cur;
-    int elem, count = 1;
+    int elem;
     cur = first;
     printf("\nEnter element to search: ");
     scanf("%d", &elem);
     while(cur!=NULL){
         if(cur->info == elem){
-            printf("Item found at %d", count);
+            printf("Item found!");
         }
         cur = cur->link;
-        count++;
     }
+}
+
+void reverse_display(NODE first){
+    if(first == NULL)
+        return;
+    if(first->link!=NULL)
+        reverse_display(first->link);
+    printf("%d ", first->info);
 }
 
 
@@ -71,7 +78,10 @@ int main(){
                 break;
             case 3:linear_search(first);
                 break;
-            case 4:exit(0);
+            case 4:printf("\n reverse order: ");
+                    reverse_display(first);
+                    break;
+            case 5:exit(0);
             default:printf("\nInvalid option!");
                 break;
         }
